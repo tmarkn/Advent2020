@@ -26,6 +26,7 @@ def makePassword(string):
     return pw
 
 # check if password is valid
+# the number of the specified letter is between the two values
 def checkValidity(pw):
     numLetters = pw.password.count(pw.letter)
     if numLetters >= pw.min and numLetters <= pw.max:

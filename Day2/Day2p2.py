@@ -26,6 +26,7 @@ def makePassword(string):
     return pw
 
 # check if password is valid
+# one of the two positions must be the specified letter
 def checkValidity(pw):
     valid = False
     if pw.password[pw.pos1-1] == pw.letter:
