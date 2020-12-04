@@ -1,6 +1,6 @@
 # password object
 class Password:
-    def __init__(self, min, max, letter, password, valid = False):
+    def __init__(self, min, max, letter, password):
         self.min = min
         self.max = max
         self.letter = letter

@@ -1,6 +1,6 @@
 # password object
 class Password:
-    def __init__(self, pos1, pos2, letter, password, valid = False):
+    def __init__(self, pos1, pos2, letter, password):
         self.pos1 = pos1
         self.pos2 = pos2
         self.letter = letter
