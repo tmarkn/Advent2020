@@ -13,6 +13,7 @@ fields = [
 # passport extends dictionary with a custom isValid function
 class Passport(dict):
     def isValid(self):
+        # check if all fields exist
         for field in fields:
             if field not in self:
                 return False
@@ -37,9 +38,5 @@ for item in items:
         passport[key] = value
 
 # count valid passports
-validPassports = 0
-for passport in passports:
-    if passport.isValid():
-        validPassports += 1
-
-print(f'The number of valid passports is {validPassports}')
+numValidPassports = sum(passport.isValid() for passport in passports)
+print(f'The number of valid passports is {numValidPassports}')
