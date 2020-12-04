@@ -6,7 +6,7 @@ with open('Day3/input.txt', 'r') as f:
 width = len(map[0])
 height = len(map)
 
-# traverse path
+# use the slope on map and return number of trees
 def traversePath(right, down):
     pos = 0
     trees = 0
