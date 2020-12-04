@@ -36,9 +36,5 @@ with open('Day2/input.txt', 'r') as f:
     passwords = [makePassword(x) for x in f.readlines()]
 
 # check letters
-count = 0
-for pw in passwords:
-    if pw.isValid() == True:
-        count += 1
-
-print(f'Number of valid passords: {count}')
+numValidPasswords = sum(pw.isValid() for pw in passwords)
+print(f'The number of valid passwords: {numValidPasswords}')
