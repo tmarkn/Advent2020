@@ -5,7 +5,14 @@ class Password:
         self.max = max
         self.letter = letter
         self.password = password
-        self.valid = valid
+
+    # check if password is valid
+    # the number of the specified letter is between the two values
+    def isValid(self):
+        numLetters = self.password.count(self.letter)
+        if numLetters >= self.min and numLetters <= self.max:
+            return True
+        return False
 
 # password constructor
 def makePassword(string):
@@ -20,19 +27,7 @@ def makePassword(string):
 
     # create password and check validity
     pw = Password(int(min), int(max), letter, password)
-    if checkValidity(pw):
-        pw.valid = True
-
     return pw
-
-# check if password is valid
-# the number of the specified letter is between the two values
-def checkValidity(pw):
-    numLetters = pw.password.count(pw.letter)
-    if numLetters >= pw.min and numLetters <= pw.max:
-        return True
-    return False
-    
 
 # get input
 with open('Day2/input.txt', 'r') as f:
@@ -41,7 +36,7 @@ with open('Day2/input.txt', 'r') as f:
 # check letters
 count = 0
 for pw in passwords:
-    if pw.valid == True:
+    if pw.isValid() == True:
         count += 1
 
 print(f'Number of valid passords: {count}')

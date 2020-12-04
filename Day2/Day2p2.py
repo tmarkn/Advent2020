@@ -5,7 +5,16 @@ class Password:
         self.pos2 = pos2
         self.letter = letter
         self.password = password
-        self.valid = valid
+
+    # check if password is valid
+    # one of the two positions must be the specified letter
+    def isValid(self):
+        valid = False
+        if self.password[self.pos1-1] == self.letter:
+            valid = not valid
+        if self.password[self.pos2-1] == self.letter:
+            valid = not valid
+        return valid
 
 # password constructor
 def makePassword(string):
@@ -20,20 +29,7 @@ def makePassword(string):
 
     # create password and check validity
     pw = Password(int(pos1), int(pos2), letter, password)
-    if checkValidity(pw):
-        pw.valid = True
-
     return pw
-
-# check if password is valid
-# one of the two positions must be the specified letter
-def checkValidity(pw):
-    valid = False
-    if pw.password[pw.pos1-1] == pw.letter:
-        valid = not valid
-    if pw.password[pw.pos2-1] == pw.letter:
-        valid = not valid
-    return valid
 
 # get input
 with open('Day2/input.txt', 'r') as f:
@@ -42,7 +38,7 @@ with open('Day2/input.txt', 'r') as f:
 # check letters
 count = 0
 for pw in passwords:
-    if pw.valid == True:
+    if pw.isValid() == True:
         count += 1
 
 print(f'Number of valid passords: {count}')
