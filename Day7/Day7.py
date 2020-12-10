@@ -12,16 +12,14 @@ class TreeNode:
     # part 1
     # count all bigger bags (once)
     def countAncestors(self):
-        queue = set(self.parents)
+        queue = self.parents
         counted = set()
-        count = 0
 
         while len(queue):
-            count += 1
-            current = queue.pop()
+            current = queue.pop(0)
             counted.add(current)
-            queue |= set(x for x in current.parents if x not in counted)
-        return count
+            queue += [x for x in current.parents if x not in counted]
+        return len(counted)
     
     # part 2
     # count all smaller bags
