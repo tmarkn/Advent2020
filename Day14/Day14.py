@@ -4,11 +4,15 @@ with open('Day14/input.txt', 'r') as f:
 
 # part 1
 def applyBitMask(mask, value):
+    # change to binary
     value = '{:036b}'.format(int(value))
     string = ''
+    # go through string
     for i in range(36):
+        # set normal value if X
         if mask[i] == 'X':
             string += value[i]
+        # set mask value if 0 or 1
         else:
             string += mask[i]
     
@@ -16,30 +20,38 @@ def applyBitMask(mask, value):
 
 # part 2
 def applyBitMask2(mask, value):
+    # change to binary
     value = '{:036b}'.format(int(value))
     string = ''
+    # go through string
     for i in range(36):
+        # set normal value if 0
         if mask[i] == '0':
             string += value[i]
+        # set mask value if 1 or X
         else:
             string += mask[i]
     
     return string
 
 # find all possible addresses from arr # recursive
-# find first X and replace with both 0 and 1
-# if another X is present, run through again program again until all X's are gone
 def possibleAddresses(arr):
     # array of items to run through again
     tempArr = []
     returnArr = []
+    # go through each item in arr
     for item in arr:
+        # get the location of first X
         firstX = item.find('X')
+        # did not find an X  # finished this address
         if firstX == -1:
             returnArr.append(item)
+        # found an X
         else:
+            # replace X with 0 and 1 then do another pass
             tempArr.append(item[:firstX] + '0' + item[firstX+1:])
             tempArr.append(item[:firstX] + '1' + item[firstX+1:])
+    # do another pass then add to finished
     if len(tempArr):
         returnArr += possibleAddresses(tempArr)
     return returnArr
