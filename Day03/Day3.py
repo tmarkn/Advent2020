@@ -1,6 +1,6 @@
 # get input
-with open('Day3/input.txt', 'r') as f:
-    map = [x[:-1] for x in f.readlines()]
+with open('Day03/input.txt', 'r') as f:
+    map = [x.strip() for x in f.readlines()]
 
 # get dimesions
 width = len(map[0])

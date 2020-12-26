@@ -69,7 +69,7 @@ class Passport(dict):
         return True
 
 # get input
-with open('Day4/input.txt', 'r') as f:
+with open('Day04/input.txt', 'r') as f:
     inp = f.read()
 
 # split by two newline characters

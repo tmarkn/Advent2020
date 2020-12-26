@@ -1,5 +1,5 @@
 # get input
-with open('Day1/input.txt', 'r') as f:
+with open('Day01/input.txt', 'r') as f:
     inp = [int(x) for x in f.readlines()]
 
 # using two numbers

@@ -35,7 +35,7 @@ class TreeNode:
         return rabbits
 
 # get input
-with open('Day7/input.txt', 'r') as f:
+with open('Day07/input.txt', 'r') as f:
     rawRules = f.readlines()
 
 colors = {}

@@ -1,5 +1,5 @@
 # get input
-with open('Day6/input.txt', 'r') as f:
+with open('Day06/input.txt', 'r') as f:
     answerList = f.read().split('\n\n')
 
 # part 1

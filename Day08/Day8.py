@@ -1,5 +1,5 @@
 # get input
-with open('Day8/input.txt', 'r') as f:
+with open('Day08/input.txt', 'r') as f:
     instructions = [x.split() for x in f.readlines()]
 
 # copy instructions # deep copy

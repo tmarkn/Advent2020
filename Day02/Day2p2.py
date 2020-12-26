@@ -32,7 +32,7 @@ def makePassword(string):
     return pw
 
 # get input
-with open('Day2/input.txt', 'r') as f:
+with open('Day02/input.txt', 'r') as f:
     passwords = [makePassword(x) for x in f.readlines()]
 
 # check letters

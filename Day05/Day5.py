@@ -22,7 +22,7 @@ def seatPos(passSpecifier):
     return row * 8 + column
 
 # get input
-with open('Day5/input.txt', 'r') as f:
+with open('Day05/input.txt', 'r') as f:
     boardPasses = f.readlines()
 
 # parse all boarding passes

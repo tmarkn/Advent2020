@@ -1,5 +1,5 @@
 # get input
-with open('Day9/input.txt', 'r') as f:
+with open('Day09/input.txt', 'r') as f:
     numbers = [int(x) for x in f.readlines()]
 
 # check if the number is a sum of two of the numbers in the array
